@@ -8,6 +8,7 @@ HOST=os.environ["DB_HOST"]
 PORT=os.environ["DB_PORT"]
 DB=os.environ["DB_NAME"]
 
+# SQLALCHEMY_DATABASE_URI='postgresql://brayan:569641@localhost:5433/pattern'
 
 SQLALCHEMY_DATABASE_URI=f'postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB}'
 SQLALCHEMY_TRACK_MODIFICATIONS = False

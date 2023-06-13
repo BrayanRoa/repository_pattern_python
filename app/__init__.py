@@ -3,8 +3,9 @@ from .db import db
 from .ext import ma, migrate
 from flasgger import Swagger
 from flask_cors import CORS
+from app.user.controller.user_controller import user
 
-prefix=f"/api/v1"
+prefix="/api/v1"
 
 def create_app(settings_module):
     app = Flask(__name__)
@@ -42,6 +43,6 @@ def create_app(settings_module):
     migrate.init_app(app)
     
     #* BLUEPRINTS
-    # app.register_blueprint(nombre, url_prefix=f"{prefix}/person")
+    app.register_blueprint(user, url_prefix=f"{prefix}/user")
     return app
     
