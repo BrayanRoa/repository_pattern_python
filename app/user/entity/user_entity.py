@@ -14,6 +14,5 @@ class UserEntity(db.Model):
     created_at = db.Column(db.DateTime)
     updated_at = db.Column(db.DateTime)
 
-    
     def start_mapper():
         mapper(UserDTO, UserEntity)

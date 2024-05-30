@@ -16,7 +16,9 @@ class UserService:
         try:
             user_data = user.load(data)
             user_info = UserDTO(
-                name=user_data["name"], lastname=user_data["lastname"], age=user_data["age"]
+                name=user_data.get("name"), 
+                lastname=user_data.get("lastname"), 
+                age=user_data.get("age")
             )
             user_added = user.dump(unitow_imp.user.add(user_info))
             return {

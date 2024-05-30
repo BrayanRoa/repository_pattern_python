@@ -7,7 +7,7 @@ settings_module = os.getenv('APP_SETTINGS_MODULE')
 
 if not settings_module:
     settings_module = os.environ.get('APP_SETTINGS_MODULE', 'config.development')
-    
+
 app = create_app(settings_module)
 jwt = JWTManager(app)
 
